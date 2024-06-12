@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Universe.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        #slider-container {
+            /* width: 80%; */
+            background-image: url('./images/solor.PNG');
+            margin: auto;
+            overflow: hidden;
+            height: 650px;
+            
+        }
+        #slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .mid{
+        display: block;
+        width: 36%;
+        margin: 20px auto;
+        /* border: 2px solid green; */
+        
+    }
+    
+        .slide {
+            width: 100%;
+            flex: 0 0 auto;
+            margin-top: 270px;
+            height: 200px;
+        }
+        .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      transition: transform 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+    }
+        .Color{
+            color: white;
+        }
+        .solor{
+           
+           margin-top: 400px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+<div id="slider-container">
+  <div class="mid">
+    <ul class="navbar">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">Daimeter </a> </li>
+      <li><a href="#">Look Planats</a></li>
+      <li><a href="#">Blogs</a></li>   
+    </ul>
+     </div>    
+    <div id="slider">
+
+        <div>
+          <img class="img-fluid solor" src="./images/solor.PNG">
+        </div>
+        <div class="slide img-fluid ">
+          <img src="./images/earth.png"><br><h1 class="Color">Earth</h1>
+        </div>
+        <div class="slide img-fluid">
+          <img src="./images/jupiter.png"  alt="Image 2"><h1 class="Color">Jupiter</h1>
+        </div>
+        <div class="slide img-fluid">
+          <img src="./images/venus.png"  alt="Image 3"><h1 class="Color">Venus</h1>
+        </div>
+        <div class="slide img-fluid">
+          <img src="./images/Sun.png"  alt="Image 3"><h1 class="Color">Sun</h1></div>
+        <div class="slide img-fluid"><img src="./images/mercury.png" alt="Image 3"><h1 class="Color">Mercury</h1>
+        </div>
+        <div class="slide img-fluid ">
+          <img src="./images/uranus.png"  alt="Image 3"><br><h1 class="Color">Saturm</h1>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+      var slideCount = $('#slider .slide').length;
+      var slideWidth = $('#slider-container').width();
+      var transitionDuration = 500; // Adjust as needed
+      var currentSlide = 0;
+  
+      function updateSlider() {
+        $('#slider').css('transform', 'translateX(' + (-currentSlide * slideWidth) + 'px)');
+      }
+  
+      function animateImage() {
+        var currentImage = $('.slide').eq(currentSlide).find('img');
+        currentImage.css('transform', 'scale(1.5) rotate(360deg)');
+        setTimeout(function() {
+          currentImage.css('transform', 'scale(1) rotate(0deg)');
+        }, transitionDuration);
+      }
+  
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlider();
+        animateImage();
+      }
+  
+      setInterval(nextSlide, 5000); // Change the interval as needed
+  
+      // Center the images
+      $('.slide img').css('max-width', '100%');
+      $('.slide').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+  
+      // Show the initial state
+      updateSlider();
+    });
+  </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    
+
+</body>
+</html> -->
